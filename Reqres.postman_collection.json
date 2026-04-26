@@ -1,0 +1,401 @@
+{
+  "info": {
+    "_postman_id": "712555c8-c1b0-4046-a854-a9a96ec12674",
+    "name": "Reqres",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33238386",
+    "_collection_link": "https://go.postman.co/collection/33238386-712555c8-c1b0-4046-a854-a9a96ec12674?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Check Status Code',function(){\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "free_user_3CpxbpChdBPLY6qaTcc0YgAO6wV",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "reqres.in/api/users?page=2",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Response Print',function(){\r",
+              "    const response=pm.response.json()\r",
+              "    console.log(response)\r",
+              "    console.log(\"Only Data Array:\", response.data)\r",
+              "})\r",
+              "pm.test('Status Code Check',function(){\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "free_user_3CpxbpChdBPLY6qaTcc0YgAO6wV",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"price\": {{price}},\r\n  \"category\": \"{{category}}\",\r\n  \"in_stock\": {{in_stock}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_URL}}/api/collections/products/records?project_id=15757",
+          "host": [
+            "{{base_URL}}"
+          ],
+          "path": [
+            "api",
+            "collections",
+            "products",
+            "records"
+          ],
+          "query": [
+            {
+              "key": "project_id",
+              "value": "15757"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PUT Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Update User Data',function(){\r",
+              "    pm.response.to.have.status(200)\r",
+              "    const response=pm.response.json()\r",
+              "    console.log(response)\r",
+              "\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "free_user_3CpxbpChdBPLY6qaTcc0YgAO6wV",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"data\": {\r\n    \"name\": \"Iphone\",\r\n    \"price\": 59.99,\r\n    \"category\": \"Mobiles\",\r\n    \"in_stock\": true\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_URL}}/api/collections/products/records?project_id=15757",
+          "host": [
+            "{{base_URL}}"
+          ],
+          "path": [
+            "api",
+            "collections",
+            "products",
+            "records"
+          ],
+          "query": [
+            {
+              "key": "project_id",
+              "value": "15757"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Check Execution Time',function(){\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000)\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "free_user_3CpxbpChdBPLY6qaTcc0YgAO6wV",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_URL}}/api/collections/products/records/2c0fb57c-ecbe-42c9-aacd-13f0d561b80a?project_id=15757",
+          "host": [
+            "{{base_URL}}"
+          ],
+          "path": [
+            "api",
+            "collections",
+            "products",
+            "records",
+            "2c0fb57c-ecbe-42c9-aacd-13f0d561b80a"
+          ],
+          "query": [
+            {
+              "key": "project_id",
+              "value": "15757"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Using CSV",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "free_user_3CpxbpChdBPLY6qaTcc0YgAO6wV",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"job\": \"{{category}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_URL}}/api/users",
+          "host": [
+            "{{base_URL}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PRE AND POST Script",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "FileUpload",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Response time check',function(){\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(3000)\r",
+              "})"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "0ed2c622-1bfd-4c7c-8ffb-4013c3e314fb",
+              "src": "/C:/Users/LENOVO/Desktop/API_Testing_Interview_QA.docx"
+            },
+            {
+              "key": "data",
+              "value": "{{$randomFirstName}}",
+              "type": "text",
+              "uuid": "83baa72c-5f41-416f-b20f-b55a11291c8f",
+              "contentType": "application/json"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://httpbin.org/post\n",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "post\n"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ImageUpload",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "uuid": "59692e95-db7f-4f36-bc81-e9a734f6d670",
+              "src": "postman-cloud:///1ef42ca9-b0b2-42c0-9461-f1e963f18a7b"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://petstore.swagger.io/v2/pet/12/uploadImage",
+          "protocol": "https",
+          "host": [
+            "petstore",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "v2",
+            "pet",
+            "12",
+            "uploadImage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Aouth Token",
+      "request": {
+        "auth": {
+          "type": "oauth2",
+          "oauth2": [
+            {
+              "key": "addTokenTo",
+              "value": "header",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Umer\",\r\n  \"gender\": \"male\",\r\n  \"email\": \"umer12wwq@test.com\",\r\n  \"status\": \"active\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gorest.co.in/public/v2/users",
+          "protocol": "https",
+          "host": [
+            "gorest",
+            "co",
+            "in"
+          ],
+          "path": [
+            "public",
+            "v2",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
